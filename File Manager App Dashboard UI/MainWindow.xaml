@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:File_Manager_App_Dashboard_UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="745" Width="1024"
+        Title="MainWindow" Height="835" Width="1340"
         ResizeMode="NoResize"
         WindowState="Normal"
         WindowStyle="None"
@@ -93,11 +93,12 @@
 
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
 
 
@@ -160,14 +161,13 @@
                         </Button.Style>
                     </Button>
                     <Grid 
-                        Width="70" 
+                        Width="75" 
                         HorizontalAlignment="Left"
                         Margin="0,10">
                         <TextBlock
-                            Text="Wyloguj"
-                            FontSize="15"
+                            Text="Wyloguj"                             
                             VerticalAlignment="Center"
-                            Foreground="LightGray"/>
+                            Foreground="Gray"/>
                         <!--Zminna "Path" jest stylowana w pliku "App.xaml"-->
                         <!--Ikona/Obrazek "right" jest z "Windows.Resoursec"-->
                         <Path
@@ -222,7 +222,58 @@
 
                 </StackPanel>
 
+                <Grid
+                    Grid.Row="4"
+                    Width="200">
+                    <Rectangle 
+                        RadiusX="10"
+                        RadiusY="10"
+                    
+                        StrokeDashArray="5"
+                        StrokeThickness="1"
+                        Stroke="Silver"
+                        />
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Path
+                            Data="{StaticResource documentfile}"
+                            Style="{StaticResource {x:Type Path}}"/>
+                        <TextBlock
+                            Margin="0,5"
+                            Text="Wrzuć plik"
+                            Foreground="Gray"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <Button 
+                    Grid.Row="5"
+                    Margin="25"
+                    Background="Orange"
+                    BorderThickness="0"
+                    Content="Wyślij Plik"
+                    Foreground="WhiteSmoke"
+                    Height="50"
+                    FontWeight="SemiBold"
+                    >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
             </Grid>
+
+            <!--Main Content-->
+            
+            <Grid
+                Grid.Column="1"
+                Background="#E1E4E6">
+                
+            </Grid>
+            
         </Grid>
     </Border>
 
