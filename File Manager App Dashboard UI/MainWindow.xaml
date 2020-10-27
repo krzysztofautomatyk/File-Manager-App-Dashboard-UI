@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:File_Manager_App_Dashboard_UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1024"
+        Title="MainWindow" Height="745" Width="1024"
         ResizeMode="NoResize"
         WindowState="Normal"
         WindowStyle="None"
+        FontSize="15"
         Background="Transparent">
 
     <Window.Resources>
@@ -16,8 +17,58 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/assets/icons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="MenuButtonStyle" TargetType="{x:Type ToggleButton}">
+                
+                <Setter Property="Background" Value="WhiteSmoke"/>
+                <Setter Property="Foreground" Value="Gray"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Height" Value="40" />
+                <Setter Property="Template">
+                <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <!--Top Left, Top Right, Bottom Right then Bottom Left-->
+                        <Border
+                            CornerRadius="10,0,0,10"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>  <!--Ikona-->
+                                        <ColumnDefinition Width="Auto"/>  <!--Content-->
+                                </Grid.ColumnDefinitions>   
+
+                                <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                                <Path Data="{TemplateBinding Tag }"
+                                      Fill="{TemplateBinding Foreground}"
+                                      Style="{StaticResource {x:Type Path}}"/>
+                                
+                                <ContentPresenter
+                                    Grid.Column="1"
+                                    TextBlock.TextAlignment="Left"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Content="{TemplateBinding Content}"
+                                />
+                            </Grid>
+                        </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#E1E4E6"/>
+                                    <Setter Property="Foreground" Value="Orange"/>
+                                    <Setter Property="FontWeight" Value="SemiBold"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         </ResourceDictionary>
     </Window.Resources>
+    
+    
     <Border
         Background="WhiteSmoke"
         CornerRadius="10">
@@ -44,7 +95,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
@@ -57,10 +108,6 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                     />
-                <Separator 
-                    VerticalAlignment="Bottom"
-                    Width="200"
-                    Background="Silver"/>
                 
                 <!--Profile Button-->
                 <StackPanel 
@@ -68,67 +115,113 @@
                     Grid.Row="1"
                     Width="200">
 
-                <Button
+                    <Button
                     Content="Jan Kowalski"
                     Grid.Row="1">
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Height" Value="50"/>
-                            <Setter Property="Background" Value="LightGray"/>
-                            <Setter Property="Foreground" Value="Gray"/>
-                            <Setter Property="FontWeight" Value="SemiBold"/>
-                            <Setter Property="Template">
-                            <Setter.Value>  
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border CornerRadius="25"
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Height" Value="50"/>
+                                <Setter Property="Background" Value="LightGray"/>
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border CornerRadius="25"
                                             Background="{TemplateBinding Background }"
                                             BorderThickness="{TemplateBinding BorderThickness}">
-                                            <Grid>
-                                                <Ellipse
+                                                <Grid>
+                                                    <Ellipse
                                                     Width="45"
                                                     Height="45"                                                    
                                                     HorizontalAlignment="Left"
                                                     Stroke ="DarkGray"
                                                     StrokeThickness="2"
                                                      >
-                                                    <Ellipse.Fill >
-                                                        <ImageBrush
+                                                        <Ellipse.Fill >
+                                                            <ImageBrush
                                                             ImageSource="/assets/4.jpg"
                                                             Stretch="UniformToFill"/>
-                                                    </Ellipse.Fill>
-                                                </Ellipse>
-                                                <ContentPresenter
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                    <ContentPresenter
                                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                     Content="{TemplateBinding Content}"
                                                     
                                                     />
 
-                                            </Grid>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                                                </Grid>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
                     <Grid 
                         Width="70" 
                         HorizontalAlignment="Left"
                         Margin="0,10">
                         <TextBlock
-                            Text="Logout"
+                            Text="Wyloguj"
                             FontSize="15"
                             VerticalAlignment="Center"
                             Foreground="LightGray"/>
                         <!--Zminna "Path" jest stylowana w pliku "App.xaml"-->
-                        <!--Ikona/Obrazek "right" jest z "Windows.Resoursec"--> 
+                        <!--Ikona/Obrazek "right" jest z "Windows.Resoursec"-->
                         <Path
                             Data="{StaticResource right }"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Center"/>
                     </Grid>
                 </StackPanel>
+                
+                <Separator 
+                    Grid.Row="1"
+                    VerticalAlignment="Bottom"
+                    Width="200"
+                    Background="Silver"/>
+
+                <!--Menu-->
+                <StackPanel
+                    Width="200"
+                    Grid.Row="2"
+                    Margin="0,10">
+                    <RadioButton
+                        IsChecked="True"
+                        GroupName="Menu"
+                        Style="{StaticResource MenuButtonStyle}" 
+                        Tag="{StaticResource home}"
+                        Content="Home"/>
+                    <RadioButton
+                        GroupName="Menu"
+                        Style="{StaticResource MenuButtonStyle}" 
+                        Tag="{StaticResource sharedfolders}"
+                        Content="Udostępnione Pliki"/>
+                    <RadioButton
+                        GroupName="Menu"
+                        Style="{StaticResource MenuButtonStyle}" 
+                        Tag="{StaticResource starred}"
+                        Content="Ulubione"/>
+                    <RadioButton
+                        GroupName="Menu"
+                        Style="{StaticResource MenuButtonStyle}" 
+                        Tag="{StaticResource statistics}"
+                        Content="Statystki"/>
+                    <RadioButton
+                        GroupName="Menu"
+                        Style="{StaticResource MenuButtonStyle}" 
+                        Tag="{StaticResource settings}"
+                        Content="Ustawienia"/>
+                    <RadioButton
+                        GroupName="Menu"
+                        Style="{StaticResource MenuButtonStyle}" 
+                        Tag="{StaticResource support}"
+                        Content="Wsparcie"/>
+
+                </StackPanel>
+
             </Grid>
         </Grid>
     </Border>
