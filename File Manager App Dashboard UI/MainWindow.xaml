@@ -164,6 +164,7 @@
                             </Style>
                         </Button.Style>
                     </Button>
+                    
                     <Grid 
                         Width="75" 
                         HorizontalAlignment="Left"
@@ -276,7 +277,88 @@
                 Grid.Column="1"
                 Background="#E1E4E6">
 
+            
+            
+            <!--Search Box & Create New Button-->
+                <Grid 
+                    Margin="40,0"
+                    Height="100"
+                    VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="180"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Background="WhiteSmoke"
+                        Height="50"
+                        CornerRadius="10">
+                        <Grid 
+                            VerticalAlignment="Stretch"
+                            Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path
+                                Style="{StaticResource {x:Type Path}}"
+                                Data="{StaticResource search}"/>
+
+                            <TextBlock 
+                                Foreground="Gray"
+                                Grid.ColumnSpan="3"
+                                Padding="50,0"
+                                Text="Wyszukaj"
+                                TextAlignment="Left"
+                                VerticalAlignment="Center"/>
+
+                            <Path
+                                Grid.Column="2"
+                                Style="{StaticResource {x:Type Path}}"
+                                Data="{StaticResource mic}"/>
+                        </Grid>
+                    </Border>
+
+                    <Button 
+                    Grid.Column="1"
+                    Margin="25,0,0,0"
+                    Background="Orange"
+                    BorderThickness="0" 
+                    Foreground="WhiteSmoke"
+                    Height="50"
+                    FontWeight="SemiBold"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Content>
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Path
+                                    Data="{StaticResource plus}"
+                                    Style="{StaticResource {x:Type Path}}"
+                                    Fill="WhiteSmoke"
+                                    HorizontalAlignment="Center"/>
+                                <TextBlock 
+                                    Grid.Column="1"
+                                    Text="Nowy Plik"
+                                    Margin="-30,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                            </Grid>
+                        </Button.Content>
+                    </Button>
+                </Grid>
             </Grid>
+            
 
         </Grid>
     </Border>
