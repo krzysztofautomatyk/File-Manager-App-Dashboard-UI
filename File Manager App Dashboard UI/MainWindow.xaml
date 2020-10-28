@@ -19,40 +19,43 @@
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="MenuButtonStyle" TargetType="{x:Type ToggleButton}">
-                
+
                 <Setter Property="Background" Value="WhiteSmoke"/>
                 <Setter Property="Foreground" Value="Gray"/>
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Height" Value="40" />
+                <Setter Property="Margin" Value="20,0,-1,0"/>
+                <Setter Property="Height" Value="50" />
                 <Setter Property="Template">
-                <Setter.Value>
+                    <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <!--Top Left, Top Right, Bottom Right then Bottom Left-->
-                        <Border
+                            <!--Top Left, Top Right, Bottom Right then Bottom Left-->
+                            <Border
                             CornerRadius="10,0,0,10"
                             Background="{TemplateBinding Background}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="30"/>  <!--Ikona-->
-                                        <ColumnDefinition Width="Auto"/>  <!--Content-->
-                                </Grid.ColumnDefinitions>   
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <!--Ikona-->
+                                        <ColumnDefinition Width="Auto"/>
+                                        <!--Content-->
+                                    </Grid.ColumnDefinitions>
 
-                                <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
-                                <Path Data="{TemplateBinding Tag }"
+                                    <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                                    <Path Data="{TemplateBinding Tag }"
                                       Fill="{TemplateBinding Foreground}"
                                       Style="{StaticResource {x:Type Path}}"/>
-                                
-                                <ContentPresenter
+
+                                    <ContentPresenter
                                     Grid.Column="1"
                                     TextBlock.TextAlignment="Left"
                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Content="{TemplateBinding Content}"
                                 />
-                            </Grid>
-                        </Border>
+                                </Grid>
+                            </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsChecked" Value="True">
                                     <Setter Property="Background" Value="#E1E4E6"/>
@@ -60,15 +63,15 @@
                                     <Setter Property="FontWeight" Value="SemiBold"/>
                                 </Trigger>
                             </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
         </ResourceDictionary>
     </Window.Resources>
-    
-    
+
+
     <Border
         Background="WhiteSmoke"
         CornerRadius="10">
@@ -109,7 +112,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                     />
-                
+
                 <!--Profile Button-->
                 <StackPanel 
                     VerticalAlignment="Center"
@@ -133,9 +136,10 @@
                                             BorderThickness="{TemplateBinding BorderThickness}">
                                                 <Grid>
                                                     <Ellipse
-                                                    Width="45"
-                                                    Height="45"                                                    
+                                                    Width="44"
+                                                    Height="Auto"                                                    
                                                     HorizontalAlignment="Left"
+                                                    Margin="1,1,0,1"
                                                     Stroke ="DarkGray"
                                                     StrokeThickness="2"
                                                      >
@@ -176,7 +180,7 @@
                             VerticalAlignment="Center"/>
                     </Grid>
                 </StackPanel>
-                
+
                 <Separator 
                     Grid.Row="1"
                     VerticalAlignment="Bottom"
@@ -185,7 +189,7 @@
 
                 <!--Menu-->
                 <StackPanel
-                    Width="200"
+                    
                     Grid.Row="2"
                     Margin="0,10">
                     <RadioButton
@@ -267,13 +271,13 @@
             </Grid>
 
             <!--Main Content-->
-            
+
             <Grid
                 Grid.Column="1"
                 Background="#E1E4E6">
-                
+
             </Grid>
-            
+
         </Grid>
     </Border>
 
