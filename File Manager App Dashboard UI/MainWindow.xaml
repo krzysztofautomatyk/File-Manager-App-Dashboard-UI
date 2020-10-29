@@ -387,6 +387,181 @@
                         ImageSource="/assets/onedrive.png"
                         LastChange="Ostatnia zmiana 30.10.2020"/>
                     </WrapPanel>
+
+                    <Grid 
+                        Margin="0,20">
+                        <TextBlock Text="Co-owners"
+                                   Foreground="Gray"/>
+                        <Button
+                             Width="30"
+                             BorderBrush="Silver"
+                             Foreground="silver"
+                             HorizontalAlignment="Right">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Content>
+                                <Path
+                                    Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button }}"
+                                    Style="{StaticResource {x:Type Path}}"
+                                    Data="{StaticResource more}"/>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                    <Grid Height="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                 
+                            </Grid.ColumnDefinitions>
+                            <Rectangle
+                                HorizontalAlignment="Left"
+                                Height="50"
+                                Width="50"
+                                RadiusX="5"
+                                RadiusY="5">
+                                <Rectangle.Fill>
+                                    <ImageBrush                                    
+                                    ImageSource="/assets/1.png"
+                                    Stretch="UniformToFill"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock
+                                    Grid.Column="1"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+                                    <Run FontWeight="Bold"
+                                         Text="Andrzej Nowacki"/>
+                                    <LineBreak/>
+                                    <Run Text="Edytuj"
+                                         FontSize="12"
+                                         Foreground="Gray"
+                                         
+                                         />
+                            </TextBlock>
+
+                        </Grid>
+
+                            <Grid  Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+
+                            </Grid.ColumnDefinitions>
+                            <Rectangle
+                                HorizontalAlignment="Left"
+                                Height="50"
+                                Width="50"
+                                RadiusX="5"
+                                RadiusY="5">
+                                <Rectangle.Fill>
+                                    <ImageBrush                                    
+                                    ImageSource="/assets/2.png"
+                                    Stretch="UniformToFill"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock
+                                    Grid.Column="1"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+                                    <Run FontWeight="Bold"
+                                         Text="Kasia Kowalska"/>
+                                    <LineBreak/>
+                                    <Run Text="Edytuj"
+                                         FontSize="12"
+                                         Foreground="Gray"
+                                         
+                                         />
+                            </TextBlock>
+
+                        </Grid>
+
+                            <Grid  Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+
+                            </Grid.ColumnDefinitions>
+                            <Rectangle
+                                HorizontalAlignment="Left"
+                                Height="50"
+                                Width="50"
+                                RadiusX="5"
+                                RadiusY="5">
+                                <Rectangle.Fill>
+                                    <ImageBrush                                    
+                                    ImageSource="/assets/3.jpg"
+                                    Stretch="UniformToFill"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock
+                                    Grid.Column="1"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+                                    <Run FontWeight="Bold"
+                                         Text="Tomasz Nowak"/>
+                                    <LineBreak/>
+                                    <Run Text="Edytuj"
+                                         FontSize="12"
+                                         Foreground="Gray"
+                                         
+                                         />
+                            </TextBlock>
+
+                        </Grid>
+                        
+                            <Grid  Grid.Column="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+
+                            </Grid.ColumnDefinitions>
+                            <Rectangle
+                                HorizontalAlignment="Left"
+                                Height="50"
+                                Width="50"
+                                RadiusX="5"
+                                RadiusY="5">
+                                <Rectangle.Fill>
+                                    <ImageBrush                                    
+                                    ImageSource="/assets/1.png"
+                                    Stretch="UniformToFill"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock
+                                    Grid.Column="1"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+                                    <Run FontWeight="Bold"
+                                         Text="Maciej Wolny"/>
+                                    <LineBreak/>
+                                    <Run Text="Edytuj"
+                                         FontSize="12"
+                                         Foreground="Gray"
+                                         
+                                         />
+                            </TextBlock>
+
+                        </Grid>
+
+                    </Grid>
+                
+                
                 </StackPanel>
 
             </Grid>
