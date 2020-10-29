@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:File_Manager_App_Dashboard_UI"
+        xmlns:local="clr-namespace:File_Manager_App_Dashboard_UI" 
+        xmlns:ccontrol="clr-namespace:File_Manager_App_Dashboard_UI.CControl"
         mc:Ignorable="d"
-        Title="MainWindow" Height="835" Width="1340"
+        Title="MainWindow" Height="835" Width="1520"
         ResizeMode="NoResize"
         WindowState="Normal"
         WindowStyle="None"
@@ -13,11 +14,7 @@
         Background="Transparent">
 
     <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/assets/icons.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-
+        
             <Style x:Key="MenuButtonStyle" TargetType="{x:Type ToggleButton}">
 
                 <Setter Property="Background" Value="WhiteSmoke"/>
@@ -67,8 +64,8 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-
-        </ResourceDictionary>
+           
+        
     </Window.Resources>
 
 
@@ -108,7 +105,7 @@
                 <!--Logo-->
                 <TextBlock
                         FontSize="50"
-                        Text="File MG"
+                        Text="Pliki MG"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                     />
@@ -276,11 +273,17 @@
             <Grid
                 Grid.Column="1"
                 Background="#E1E4E6">
-
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    
+                </Grid.RowDefinitions>
             
             
             <!--Search Box & Create New Button-->
                 <Grid 
+                    Grid.Row="0"
                     Margin="40,0"
                     Height="100"
                     VerticalAlignment="Top">
@@ -357,9 +360,36 @@
                         </Button.Content>
                     </Button>
                 </Grid>
-            </Grid>
-            
 
+
+
+                
+                
+                
+            
+            
+            <StackPanel
+                    Grid.Row="1"
+                    Orientation="Vertical"
+                    Margin="40,0">
+                    <WrapPanel>
+                    <ccontrol:CardControl 
+                        DriveName="Google Drive"
+                        ImageSource="/assets/googledrive.png"
+                        LastChange="Ostatnia zmiana 15.10.2020"/>
+                    <ccontrol:CardControl 
+                        Margin="20,0"
+                        DriveName="Google Drive"
+                        ImageSource="/assets/dropbox.png"
+                        LastChange="Ostatnia zmiana 10.10.2020"/>
+                    <ccontrol:CardControl 
+                        DriveName="Google Drive"
+                        ImageSource="/assets/onedrive.png"
+                        LastChange="Ostatnia zmiana 30.10.2020"/>
+                    </WrapPanel>
+                </StackPanel>
+
+            </Grid>
         </Grid>
     </Border>
 

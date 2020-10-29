@@ -4,10 +4,17 @@
              xmlns:local="clr-namespace:File_Manager_App_Dashboard_UI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style TargetType="{x:Type Path}">
-            <Setter Property="Fill" Value="Gray"/>
-            <Setter Property="Width" Value="15"/>
-            <Setter Property="Stretch" Value="Uniform" />
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/assets/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <Style TargetType="{x:Type Path}">
+                <Setter Property="Fill" Value="Gray"/>
+                <Setter Property="Width" Value="15"/>
+                <Setter Property="Stretch" Value="Uniform" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
