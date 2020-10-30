@@ -24,15 +24,39 @@ namespace File_Manager_App_Dashboard_UI.CControl
         {
             InitializeComponent();
         }
-        //public Uri ImageSource
-        //{
-        //    get { return (Uri)GetValue(ImageSourceProperty); }
-        //    set { SetValue(ImageSourceProperty, value); }
-        //}
 
-        //// Using a DependencyProperty as the backing store for ImageSource. This enables animation, stylin, binding, etc...
-        //public static readonly DependencyProperty ImageSourceProperty =
-        //    DependencyProperty.Register("ImageSource", typeof(Uri), typeof(FoldersControl));
+
+        public Uri ImageSource1
+        {
+            get { return (Uri)GetValue(ImageSource1Property); }
+            set { SetValue(ImageSource1Property, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ImageSource. This enables animation, stylin, binding, etc...
+        public static readonly DependencyProperty ImageSource1Property =
+            DependencyProperty.Register("ImageSource1", typeof(Uri), typeof(FoldersControl));
+
+        public Uri ImageSource2
+        {
+            get { return (Uri)GetValue(ImageSource2Property); }
+            set { SetValue(ImageSource2Property, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ImageSource. This enables animation, stylin, binding, etc...
+        public static readonly DependencyProperty ImageSource2Property =
+            DependencyProperty.Register("ImageSource2", typeof(Uri), typeof(FoldersControl));
+
+
+        public Uri ImageSource3
+        {
+            get { return (Uri)GetValue(ImageSource3Property); }
+            set { SetValue(ImageSource3Property, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ImageSource. This enables animation, stylin, binding, etc...
+        public static readonly DependencyProperty ImageSource3Property =
+            DependencyProperty.Register("ImageSource3", typeof(Uri), typeof(FoldersControl));
+
 
 
 
@@ -68,7 +92,7 @@ namespace File_Manager_App_Dashboard_UI.CControl
 
         // Using a DependencyProperty as the backing store for lastChange.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty lastChangeProperty =
-            DependencyProperty.Register("lastChange", typeof(string), typeof(FoldersControl));
+            DependencyProperty.Register("LastChange", typeof(string), typeof(FoldersControl));
 
     }
 }

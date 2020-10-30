@@ -592,16 +592,27 @@
                     <WrapPanel>
                         <ccontrol:FoldersControl
                             FolderName="Dokumenty"
-                            LastChange="Ostatnia zmiana 12.10.2020"/>
+                            LastChange="Ostatnia zmiana 12.10.2020"
+                            ImageSource1="/assets/1.png"
+                            ImageSource2="/assets/2.png"
+                            ImageSource3="/assets/1.png"/>
 
                         <ccontrol:FoldersControl
                             Margin="20,0"
                             FolderName="Zdjęcia"
-                            LastChange="Ostatnia zmiana 02.10.2020"/>
-                        
+                            LastChange="Ostatnia zmiana 14.10.2020"
+                            ImageSource1="/assets/1.png"
+                            ImageSource2="/assets/2.png"
+                            ImageSource3="/assets/1.png"/>
+
+
                         <ccontrol:FoldersControl
-                            FolderName="Pliki"
-                            LastChange="Ostatnia zmiana 30.10.2020"/>
+                            FolderName="Muzyka"
+                            LastChange="Ostatnia zmiana 06.10.2020"
+                            ImageSource1="/assets/1.png"
+                            ImageSource2="/assets/2.png"
+                            ImageSource3="/assets/1.png"/>
+
                     </WrapPanel>
                 
                 </StackPanel>

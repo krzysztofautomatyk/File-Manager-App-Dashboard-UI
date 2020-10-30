@@ -15,8 +15,6 @@
 
             <Setter Property="Background" Value="WhiteSmoke"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <!--<Setter Property="BorderBrush" Value="White"/>-->
-            <!--<Setter Property="Height" Value="160" />-->
             <Setter Property="Width" Value="300"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -33,7 +31,6 @@
                                         Data="{StaticResource more}"
                                         Style="{StaticResource {x:Type Path}}"
                                         HorizontalAlignment="Right" 
-                                        
                                          />
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -63,11 +60,11 @@
                                         Height="30"
                                         Width="30"
                                         HorizontalAlignment="Right">
-                                        <Ellipse.Fill>
-                                            <ImageBrush 
-                                                ImageSource="/assets/1.png"
-                                                Stretch="Uniform"/>
-                                        </Ellipse.Fill>
+                                            <Ellipse.Fill>
+                                                <ImageBrush 
+                                                    ImageSource="{Binding ImageSource1,  ElementName=_FoldersControl, FallbackValue='/assets/googledrive.png', TargetNullValue='/assets/googledrive.png'}"
+                                                    Stretch="Uniform"/>
+                                            </Ellipse.Fill>
                                         </Ellipse>
 
                                         <Ellipse
@@ -79,11 +76,11 @@
                                         HorizontalAlignment="Right">
                                             <Ellipse.Fill>
                                                 <ImageBrush 
-                                                ImageSource="/assets/2.png"
+                                                ImageSource="{Binding ImageSource2,  ElementName=_FoldersControl, FallbackValue='/assets/googledrive.png', TargetNullValue='/assets/googledrive.png'}"
                                                 Stretch="Uniform"/>
                                             </Ellipse.Fill>
                                         </Ellipse>
-
+                                        <!--ImageSource="/assets/3.jpg"-->
                                         <Ellipse
                                         StrokeThickness="1"
                                         Stroke="White"
@@ -92,7 +89,7 @@
                                         HorizontalAlignment="Right">
                                             <Ellipse.Fill>
                                                 <ImageBrush 
-                                                ImageSource="/assets/1.png"
+                                                ImageSource = "{Binding ImageSource3,  ElementName=_FoldersControl, FallbackValue='/assets/googledrive.png', TargetNullValue='/assets/googledrive.png'}"
                                                 Stretch="Uniform"/>
                                             </Ellipse.Fill>
                                         </Ellipse>
@@ -103,7 +100,7 @@
                                     Margin="5"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center">
-                                    <Run Text="{Binding FolderName, FallbackValue='Nazwa Katalogu', TargetNullValue='Nazwa Katalogu'}"/>
+                                    <Run Text="{Binding FolderName, ElementName=_FoldersControl, FallbackValue='Nazwa Katalogu', TargetNullValue='Nazwa Katalogu'}"/>
                                          
                                   </TextBlock>
 
@@ -120,7 +117,7 @@
                                                 Margin="5,0"
                                                 Foreground="Gray"
                                                 VerticalAlignment="Center"
-                                                Text="{Binding lastChange, ElementName=_FolderControl, FallbackValue='Ostatnia zmiana wykonana', TargetNullValue='Ostatnia zmiana wykonana'}"/>
+                                                Text="{Binding LastChange, ElementName=_FoldersControl, FallbackValue='Ostatnia zmiana wykonana', TargetNullValue='Ostatnia zmiana wykonana'}"/>
                                     </StackPanel>
                                 </Grid>
                                 
@@ -138,7 +135,7 @@
                                 <!--<Setter TargetName="progress" Property="Foreground" Value="#4D5E72"/>-->
                                 <!--<Setter TargetName="logo" Property="Effect" Value="{x:Null}"/>-->
                                 <Setter TargetName="recentIcon" Property="Fill" Value="white"/>
-                                <Setter TargetName="folderIcon" Property="Fill" Value="silver"/>
+                                <Setter TargetName="folderIcon" Property="Fill" Value="whitesmoke"/>
                                 <Setter TargetName="lastchangetext" Property="Foreground" Value="white"/>
                                 <Setter Property="Effect">
                                     <Setter.Value>
@@ -156,75 +153,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF06B025"/>
-        <SolidColorBrush x:Key="ProgressBar.Background" Color="#FFE6E6E6"/>
-        <SolidColorBrush x:Key="ProgressBar.Border" Color="#FFBCBCBC"/>
-        <Style x:Key="ProgressBarStyle1" TargetType="{x:Type ProgressBar}">
-            <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
-            <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ProgressBar}">
-                        <Grid x:Name="TemplateRoot">
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Determinate"/>
-                                    <VisualState x:Name="Indeterminate">
-                                        <Storyboard RepeatBehavior="Forever">
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Animation">
-                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.25"/>
-                                                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25"/>
-                                                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25"/>
-                                            </DoubleAnimationUsingKeyFrames>
-                                            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="Animation">
-                                                <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5"/>
-                                                <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5"/>
-                                                <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5"/>
-                                            </PointAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                            <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                                    BorderThickness="{TemplateBinding BorderThickness}" 
-                                    Background="{TemplateBinding Background}"
-                                    CornerRadius="2"/>
-                            <Rectangle x:Name="PART_Track"
-                                       />
-                            <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left">
-                                <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" RadiusX="2"
-                                       RadiusY="2"/>
-                                <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5" RadiusX="2"
-                                       RadiusY="2">
-                                    <Rectangle.RenderTransform>
-                                        <TransformGroup>
-                                            <ScaleTransform/>
-                                            <SkewTransform/>
-                                            <RotateTransform/>
-                                            <TranslateTransform/>
-                                        </TransformGroup>
-                                    </Rectangle.RenderTransform>
-                                </Rectangle>
-                            </Grid>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="Orientation" Value="Vertical">
-                                <Setter Property="LayoutTransform" TargetName="TemplateRoot">
-                                    <Setter.Value>
-                                        <RotateTransform Angle="-90"/>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                            <Trigger Property="IsIndeterminate" Value="true">
-                                <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+         
 
     </UserControl.Resources>
 
