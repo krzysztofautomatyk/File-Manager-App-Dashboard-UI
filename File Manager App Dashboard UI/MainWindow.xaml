@@ -388,9 +388,10 @@
                         LastChange="Ostatnia zmiana 30.10.2020"/>
                     </WrapPanel>
 
+                     <!--Co-Owners Display Cards-->
                     <Grid 
                         Margin="0,20">
-                        <TextBlock Text="Co-owners"
+                        <TextBlock Text="Współzałożyciele"
                                    Foreground="Gray"/>
                         <Button
                              Width="30"
@@ -410,6 +411,9 @@
                             </Button.Content>
                         </Button>
                     </Grid>
+
+                
+
                     <Grid Height="50">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -560,7 +564,45 @@
                         </Grid>
 
                     </Grid>
-                
+                    <Grid 
+                        Margin="0,20">
+                        <TextBlock Text="Katalogi"
+                                   Foreground="Gray"/>
+                        <Button
+                             Width="30"
+                             Background="Transparent"
+                             BorderBrush="Silver"
+                             Foreground="silver"
+                             HorizontalAlignment="Right">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Content>
+                                <Path
+                                    Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button }}"
+                                    Style="{StaticResource {x:Type Path}}"
+                                    Data="{StaticResource more}"/>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+
+                    <WrapPanel>
+                        <ccontrol:FoldersControl
+                            FolderName="Dokumenty"
+                            LastChange="Ostatnia zmiana 12.10.2020"/>
+
+                        <ccontrol:FoldersControl
+                            Margin="20,0"
+                            FolderName="Zdjęcia"
+                            LastChange="Ostatnia zmiana 02.10.2020"/>
+                        
+                        <ccontrol:FoldersControl
+                            FolderName="Pliki"
+                            LastChange="Ostatnia zmiana 30.10.2020"/>
+                    </WrapPanel>
                 
                 </StackPanel>
 

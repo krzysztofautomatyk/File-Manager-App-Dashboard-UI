@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CControl\FoldersControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,6 +77,9 @@
     </Compile>
     <Compile Include="CControl\CardControl.xaml.cs">
       <DependentUpon>CardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CControl\FoldersControl.xaml.cs">
+      <DependentUpon>FoldersControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
