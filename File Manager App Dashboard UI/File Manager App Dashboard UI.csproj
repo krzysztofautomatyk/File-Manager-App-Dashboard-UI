@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CControl\CRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CControl\FoldersControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -77,6 +81,9 @@
     </Compile>
     <Compile Include="CControl\CardControl.xaml.cs">
       <DependentUpon>CardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CControl\CRow.xaml.cs">
+      <DependentUpon>CRow.xaml</DependentUpon>
     </Compile>
     <Compile Include="CControl\FoldersControl.xaml.cs">
       <DependentUpon>FoldersControl.xaml</DependentUpon>

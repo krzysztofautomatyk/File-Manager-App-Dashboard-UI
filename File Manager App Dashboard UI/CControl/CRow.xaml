@@ -1,0 +1,185 @@
+﻿<UserControl x:Class="File_Manager_App_Dashboard_UI.CControl.CRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:File_Manager_App_Dashboard_UI.CControl"
+             mc:Ignorable="d"
+             Height="50"
+             x:Name="_RControl"
+            >
+    <UserControl.Resources>
+
+     
+         
+    </UserControl.Resources>
+
+    <RadioButton 
+       >
+        <RadioButton.Style>
+            <Style TargetType="{x:Type ToggleButton}">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ToggleButton}">
+                            <Border
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5">
+                            
+                            <Grid Height="50">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    
+                                </Grid.ColumnDefinitions>
+
+                                <CheckBox   
+                                    IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged,  RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type RadioButton}}}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                                    <CheckBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="5"/>
+                                        </Style>
+                                    </CheckBox.Resources>
+                                        <CheckBox.Style>
+                                            <Style TargetType="{x:Type CheckBox}">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter Property="Background" Value="Orange"/>
+                                                        <Setter Property="BorderBrush" Value="Orange"/>                                                         
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+
+                                        </CheckBox.Style>
+                                </CheckBox>
+
+                                    <StackPanel 
+                                        Orientation="Horizontal"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Left"  >
+                                        <Path         
+                                            Data="{StaticResource docfile}"
+                                            Style="{StaticResource {x:Type Path}}"/>
+
+                                    </StackPanel>
+
+                                    <StackPanel  
+                                            Grid.Column="2"
+                                            Orientation="Horizontal"
+                                         >       
+                                        <TextBlock 
+            
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding DocName, ElementName=_RControl, FallbackValue='Nazwa dokumentu', TargetNullValue='Nazwa dokumentu'}"/>
+                                    </StackPanel>
+                                
+                                    <StackPanel
+                            Grid.Column="3"
+                            Orientation="Horizontal">
+                                    <TextBlock              
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding FileSize, ElementName=_RControl, FallbackValue='Rozmiar', TargetNullValue='Nazwa dokumentu'}"/>
+                                    </StackPanel>
+                                
+                                    <StackPanel
+                            Grid.Column="4"
+                            Orientation="Horizontal">
+                                    <TextBlock 
+             
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding LastEdit, ElementName=_RControl,FallbackValue='Ostania edycja', TargetNullValue='Ostania edycja'}"/>         
+                                    </StackPanel>
+
+
+
+                                 
+                                        <Grid Grid.Column="6"> 
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        HorizontalAlignment="Left">
+                                                    <Ellipse
+                                                        StrokeThickness="1"
+                                                        Stroke="White"
+                                                        Height="30"
+                                                        Width="30"
+                                                        HorizontalAlignment="Right">
+                                                    <Ellipse.Fill>
+                                                        <ImageBrush 
+                                                            ImageSource="{Binding ImageSource1,  ElementName=_RControl, FallbackValue='/assets/googledrive.png', TargetNullValue='/assets/googledrive.png'}"
+                                                            Stretch="Uniform"/>
+                                                    </Ellipse.Fill>
+                                                </Ellipse>
+
+                                                    <Ellipse
+                                                        StrokeThickness="1"
+                                                        Stroke="White"
+                                                        Height="30"
+                                                        Width="30"
+                                                        Margin="-5,0"
+                                                        HorizontalAlignment="Right">
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush 
+                                                                ImageSource="{Binding ImageSource2,  ElementName=_RControl, FallbackValue='/assets/googledrive.png', TargetNullValue='/assets/googledrive.png'}"
+                                                                Stretch="Uniform"/>
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                     
+                                                    <Ellipse
+                                                        StrokeThickness="1"
+                                                        Stroke="White"
+                                                        Height="30"
+                                                        Width="30"
+                                                        HorizontalAlignment="Right">
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush 
+                                                        ImageSource = "{Binding ImageSource3,  ElementName=_RControl, FallbackValue='/assets/googledrive.png', TargetNullValue='/assets/googledrive.png'}"
+                                                        Stretch="Uniform"/>
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                            </StackPanel>
+
+                                            <StackPanel Grid.Column="1"
+                                                        Orientation="Horizontal"
+                                                        VerticalAlignment="Center"
+                                                        HorizontalAlignment="Right">
+                                            <Button   
+                                                Height="20"   
+                                                Background="Transparent"
+                                                BorderThickness="0">
+                                            <Button.Content>
+                                                <Path
+                                                        Data="{StaticResource more_v}"
+                                                        Style="{StaticResource {x:Type Path}}"/>
+                                            </Button.Content>
+                                            </Button>
+                                        </StackPanel>
+                                            
+                                            
+                                            
+                                        </Grid>
+                                    
+                                
+                                </Grid>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </RadioButton.Style>     
+    </RadioButton>
+</UserControl>
