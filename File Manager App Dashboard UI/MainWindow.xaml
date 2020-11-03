@@ -750,7 +750,280 @@
 
             </Grid>
             </ScrollViewer>
+            
+            <!--Right Panel-->
+            <Grid Grid.Column="2"
+                  Margin="20">
+                <StackPanel>
+                <Grid VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition />
+
+                    </Grid.ColumnDefinitions>
+                    <Ellipse
+                                            x:Name="logo"
+                                            Height="50"
+                                            Width="50"
+                                            Fill="White">
+                        <Ellipse.Effect>
+                            <DropShadowEffect
+                                                    Direction="320"
+                                                    ShadowDepth="1"
+                                                    Color="Silver"
+                                                    BlurRadius="20"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <Ellipse 
+                                            Height="30"
+                                            Width="30">
+                        <Ellipse.Fill>
+                            <ImageBrush 
+                                ImageSource="/assets/googledrive.png"
+                                Stretch="Uniform"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                    <!--<Path Data="{TemplateBinding Tag }"
+                                          Fill="{TemplateBinding Foreground}"
+                                          Style="{StaticResource {x:Type Path}}"/>-->
+                    <TextBlock
+                                            Margin="15,0"
+                                            Grid.Column="1"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Text="Google Drive"/>
+
+                </Grid>
+                    
+                <Grid
+                    Margin="0,30,0,0">
+                 
+                    <TextBlock
+                        Text="56 Gb"/>
+                    <TextBlock
+                        Text="100 Gb"
+                        HorizontalAlignment="Right"/>
+                    </Grid>     
+                    
+                    <ProgressBar
+                        Margin="0,5"
+                        x:Name="progress"
+                        Height="5"
+                        BorderBrush="White"
+                        Foreground="Orange"
+                        Value="56" Style="{DynamicResource ProgressBarStyle1}">
+                        <!--<ProgressBar.Resources>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="CornerRadius" Value="2"/>
+                                            </Style>
+                                        </ProgressBar.Resources>-->
+                    </ProgressBar>
+                    <Separator 
+                        Margin="0,20"
+                        Background="LightGray"/>
+                    
+                        <Grid Height="35"
+                              >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                       
+                            
+                       
+                            <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                            <Path Data="{StaticResource audiofile }"
+                                   
+                                  Fill="Orange"
+                                  Style="{StaticResource {x:Type Path}}"/>
+                            <TextBlock
+                                Grid.Column="1"
+                                Text="Muzyka"
+                                VerticalAlignment="Center"/>
+                            <TextBlock
+                                Grid.Column="2"
+                                Text="13 GB"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <ProgressBar
+                                Margin="0,5"
+                                Grid.Row="1" 
+                                Height="5"
+                                BorderBrush="White"
+                                Foreground="Orange"
+                                Value="70" Style="{DynamicResource ProgressBarStyle1}">
+                        </ProgressBar>
+                    </Grid>
+
+                        <Grid Height="35"
+                              Margin="0,20,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid  >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+
+
+                                <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                                <Path Data="{StaticResource imagefile }"
+                                   
+                                      Fill="#FF60AC14"
+                                      Style="{StaticResource {x:Type Path}}"/>
+                                <TextBlock
+                                    Grid.Column="1"
+                                    Text="Zdjęcia"
+                                    VerticalAlignment="Center"/>
+                                <TextBlock
+                                    Grid.Column="2"
+                                    Text="15 GB"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"/>
+                            </Grid>
+                            <ProgressBar
+                                    Margin="0,5"
+                                    Grid.Row="1" 
+                                    Height="5"
+                                    BorderBrush="White"
+                                    Foreground="#FF60AC14"
+                                    Value="80" Style="{DynamicResource ProgressBarStyle1}">
+                            </ProgressBar>
+                        </Grid>
+                    <Grid Height="35"
+                              Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+
+
+                            <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                            <Path Data="{StaticResource documentfile }"
+                                   
+                                      Fill="#FF18A3D6"
+                                      Style="{StaticResource {x:Type Path}}"/>
+                            <TextBlock
+                                    Grid.Column="1"
+                                    Text="Dokumenty"
+                                    VerticalAlignment="Center"/>
+                            <TextBlock
+                                    Grid.Column="2"
+                                    Text="6 GB"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"/>
+                        </Grid>
+                        <ProgressBar
+                                    Margin="0,5"
+                                    Grid.Row="1" 
+                                    Height="5"
+                                    BorderBrush="White"
+                                    Foreground="#FF18A3D6"
+                                    Value="35" Style="{DynamicResource ProgressBarStyle1}">
+                        </ProgressBar>
+                    </Grid>
+                    <Grid Height="35"
+                              Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+
+
+                            <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                            <Path Data="{StaticResource file }"
+                                   
+                                      Fill="#FFB700C9"
+                                      Style="{StaticResource {x:Type Path}}"/>
+                            <TextBlock
+                                    Grid.Column="1"
+                                    Text="Inne pliki"
+                                    VerticalAlignment="Center"/>
+                            <TextBlock
+                                    Grid.Column="2"
+                                    Text="8 GB"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"/>
+                        </Grid>
+                        <ProgressBar
+                                    Margin="0,5"
+                                    Grid.Row="1" 
+                                    Height="5"
+                                    BorderBrush="White"
+                                    Foreground="#FFB700C9"
+                                    Value="55" Style="{DynamicResource ProgressBarStyle1}">
+                        </ProgressBar>
+                    </Grid>
+                    <Grid Height="35"
+                              Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+
+
+                            <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                            <Path Data="{StaticResource file }"
+                                   
+                                      Fill="#FF666666"
+                                      Style="{StaticResource {x:Type Path}}"/>
+                            <TextBlock
+                                    Grid.Column="1"
+                                    Text="Nieropoznane pliki"
+                                    VerticalAlignment="Center"/>
+                            <TextBlock
+                                    Grid.Column="2"
+                                    Text="14 GB"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"/>
+                        </Grid>
+                        <ProgressBar
+                                    Margin="0,5"
+                                    Grid.Row="1" 
+                                    Height="5"
+                                    BorderBrush="White"
+                                    Foreground="#FF666666"
+                                    Value="70" Style="{DynamicResource ProgressBarStyle1}">
+                        </ProgressBar>
+                    </Grid>
+                </StackPanel>
+            </Grid>
         </Grid>
+                
     </Border>
 
 </Window>
