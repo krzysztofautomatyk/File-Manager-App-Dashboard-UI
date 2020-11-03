@@ -24,5 +24,10 @@ namespace File_Manager_App_Dashboard_UI
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

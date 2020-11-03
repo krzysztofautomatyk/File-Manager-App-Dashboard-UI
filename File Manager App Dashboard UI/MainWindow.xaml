@@ -14,58 +14,58 @@
         Background="Transparent">
 
     <Window.Resources>
-        
-            <Style x:Key="MenuButtonStyle" TargetType="{x:Type ToggleButton}">
 
-                <Setter Property="Background" Value="WhiteSmoke"/>
-                <Setter Property="Foreground" Value="Gray"/>
-                <Setter Property="HorizontalContentAlignment" Value="Left"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Margin" Value="20,0,-1,0"/>
-                <Setter Property="Height" Value="50" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type ToggleButton}">
-                            <!--Top Left, Top Right, Bottom Right then Bottom Left-->
-                            <Border
+        <Style x:Key="MenuButtonStyle" TargetType="{x:Type ToggleButton}">
+
+            <Setter Property="Background" Value="WhiteSmoke"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="20,0,-1,0"/>
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <!--Top Left, Top Right, Bottom Right then Bottom Left-->
+                        <Border
                             CornerRadius="10,0,0,10"
                             Background="{TemplateBinding Background}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50"/>
-                                        <!--Ikona-->
-                                        <ColumnDefinition Width="Auto"/>
-                                        <!--Content-->
-                                    </Grid.ColumnDefinitions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <!--Ikona-->
+                                    <ColumnDefinition Width="Auto"/>
+                                    <!--Content-->
+                                </Grid.ColumnDefinitions>
 
-                                    <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
-                                    <Path Data="{TemplateBinding Tag }"
+                                <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                                <Path Data="{TemplateBinding Tag }"
                                       Fill="{TemplateBinding Foreground}"
                                       Style="{StaticResource {x:Type Path}}"/>
 
-                                    <ContentPresenter
+                                <ContentPresenter
                                     Grid.Column="1"
                                     TextBlock.TextAlignment="Left"
                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Content="{TemplateBinding Content}"
                                 />
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" Value="#E1E4E6"/>
-                                    <Setter Property="Foreground" Value="Orange"/>
-                                    <Setter Property="FontWeight" Value="SemiBold"/>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-           
-        
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="#E1E4E6"/>
+                                <Setter Property="Foreground" Value="Orange"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
     </Window.Resources>
 
 
@@ -104,10 +104,11 @@
 
                 <!--Logo-->
                 <TextBlock
-                        FontSize="50"
-                        Text="Pliki MG"
+                        FontSize="36"
+                        TextWrapping="Wrap"
+                        Text="Menadżer Plików"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
+                        VerticalAlignment="Center" TextAlignment="Center" FontWeight="Bold" Foreground="#FF6A6A6A"
                     />
 
                 <!--Profile Button-->
@@ -161,7 +162,7 @@
                             </Style>
                         </Button.Style>
                     </Button>
-                    
+
                     <Grid 
                         Width="75" 
                         HorizontalAlignment="Left"
@@ -251,7 +252,7 @@
 
                 <Button 
                     Grid.Row="5"
-                    Margin="25"
+                    Margin="25,0,25,20"
                     Background="Orange"
                     BorderThickness="0"
                     Content="Wyślij Plik"
@@ -276,43 +277,43 @@
                 <Grid
                 Grid.Column="1"
                 Background="#E1E4E6">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    
-                </Grid.RowDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
 
-                
+                    </Grid.RowDefinitions>
+
+
                     <!--Search Box & Create New Button-->
-                <Grid 
+                    <Grid 
                     Grid.Row="0"
                     Margin="40,0"
                     Height="100"
                     VerticalAlignment="Top">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="180"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="180"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Border
+                        <Border
                         Background="WhiteSmoke"
                         Height="50"
                         CornerRadius="10">
-                        <Grid 
+                            <Grid 
                             VerticalAlignment="Stretch"
                             Grid.Column="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50"/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="50"/>
-                            </Grid.ColumnDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
 
-                            <Path
+                                <Path
                                 Style="{StaticResource {x:Type Path}}"
                                 Data="{StaticResource search}"/>
 
-                            <TextBlock 
+                                <TextBlock 
                                 Foreground="Gray"
                                 Grid.ColumnSpan="3"
                                 Padding="50,0"
@@ -320,14 +321,14 @@
                                 TextAlignment="Left"
                                 VerticalAlignment="Center"/>
 
-                            <Path
+                                <Path
                                 Grid.Column="2"
                                 Style="{StaticResource {x:Type Path}}"
                                 Data="{StaticResource mic}"/>
-                        </Grid>
-                    </Border>
+                            </Grid>
+                        </Border>
 
-                    <Button 
+                        <Button 
                     Grid.Column="1"
                     Margin="25,0,0,0"
                     Background="Orange"
@@ -337,88 +338,88 @@
                     FontWeight="SemiBold"
                     HorizontalContentAlignment="Stretch"
                     VerticalContentAlignment="Stretch">
-                        <Button.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </Style>
-                        </Button.Resources>
-                        <Button.Content>
-                            <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Path
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                            <Button.Content>
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Path
                                     Data="{StaticResource plus}"
                                     Style="{StaticResource {x:Type Path}}"
                                     Fill="WhiteSmoke"
                                     HorizontalAlignment="Center"/>
-                                <TextBlock 
+                                    <TextBlock 
                                     Grid.Column="1"
                                     Text="Nowy Plik"
                                     Margin="-30,0,0,0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"/>
-                            </Grid>
-                        </Button.Content>
-                    </Button>
-                </Grid>
+                                </Grid>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
 
 
 
-                
-                
-                
-            
-            
-            <StackPanel
+
+
+
+
+
+                    <StackPanel
                     Grid.Row="1"
                     Orientation="Vertical"
                     Margin="40,0">
-                    <WrapPanel>
-                    <ccontrol:CardControl 
+                        <WrapPanel>
+                            <ccontrol:CardControl 
                         DriveName="Google Drive"
                         ImageSource="/assets/googledrive.png"
                         LastChange="Ostatnia zmiana 15.10.2020"/>
-                    <ccontrol:CardControl 
+                            <ccontrol:CardControl 
                         Margin="20,0"
                         DriveName="Google Drive"
                         ImageSource="/assets/dropbox.png"
                         LastChange="Ostatnia zmiana 10.10.2020"/>
-                    <ccontrol:CardControl 
+                            <ccontrol:CardControl 
                         DriveName="Google Drive"
                         ImageSource="/assets/onedrive.png"
                         LastChange="Ostatnia zmiana 30.10.2020"/>
-                    </WrapPanel>
+                        </WrapPanel>
 
-                     <!--Co-Owners Display Cards-->
-                    <Grid 
+                        <!--Co-Owners Display Cards-->
+                        <Grid 
                         Margin="0,20">
-                        <TextBlock Text="Współzałożyciele"
+                            <TextBlock Text="Współzałożyciele"
                                    Foreground="Gray"/>
-                        <Button
+                            <Button
                              Width="30"
                              Background="Transparent"
                              BorderBrush="Silver"
                              Foreground="silver"
                              HorizontalAlignment="Right">
-                            <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
-                            <Button.Content>
-                                <Path
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Content>
+                                    <Path
                                     Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button }}"
                                     Style="{StaticResource {x:Type Path}}"
                                     Data="{StaticResource more}"/>
-                            </Button.Content>
-                        </Button>
-                    </Grid>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
 
-                
 
-                    <Grid Height="50">
+
+                        <Grid Height="50">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition />
@@ -428,24 +429,24 @@
                             </Grid.ColumnDefinitions>
 
                             <Grid  >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
-                                 
-                            </Grid.ColumnDefinitions>
-                            <Rectangle
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
                                 HorizontalAlignment="Left"
                                 Height="50"
                                 Width="50"
                                 RadiusX="5"
                                 RadiusY="5">
-                                <Rectangle.Fill>
-                                    <ImageBrush                                    
+                                    <Rectangle.Fill>
+                                        <ImageBrush                                    
                                     ImageSource="/assets/1.png"
                                     Stretch="UniformToFill"/>
-                                </Rectangle.Fill>
-                            </Rectangle>
-                            <TextBlock
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <TextBlock
                                     Grid.Column="1"
                                     Margin="10,0"
                                     HorizontalAlignment="Left"
@@ -458,29 +459,29 @@
                                          Foreground="Gray"
                                          
                                          />
-                            </TextBlock>
+                                </TextBlock>
 
-                        </Grid>
+                            </Grid>
 
                             <Grid  Grid.Column="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
 
-                            </Grid.ColumnDefinitions>
-                            <Rectangle
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
                                 HorizontalAlignment="Left"
                                 Height="50"
                                 Width="50"
                                 RadiusX="5"
                                 RadiusY="5">
-                                <Rectangle.Fill>
-                                    <ImageBrush                                    
+                                    <Rectangle.Fill>
+                                        <ImageBrush                                    
                                     ImageSource="/assets/2.png"
                                     Stretch="UniformToFill"/>
-                                </Rectangle.Fill>
-                            </Rectangle>
-                            <TextBlock
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <TextBlock
                                     Grid.Column="1"
                                     Margin="10,0"
                                     HorizontalAlignment="Left"
@@ -493,29 +494,29 @@
                                          Foreground="Gray"
                                          
                                          />
-                            </TextBlock>
+                                </TextBlock>
 
-                        </Grid>
+                            </Grid>
 
                             <Grid  Grid.Column="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
 
-                            </Grid.ColumnDefinitions>
-                            <Rectangle
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
                                 HorizontalAlignment="Left"
                                 Height="50"
                                 Width="50"
                                 RadiusX="5"
                                 RadiusY="5">
-                                <Rectangle.Fill>
-                                    <ImageBrush                                    
+                                    <Rectangle.Fill>
+                                        <ImageBrush                                    
                                     ImageSource="/assets/3.jpg"
                                     Stretch="UniformToFill"/>
-                                </Rectangle.Fill>
-                            </Rectangle>
-                            <TextBlock
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <TextBlock
                                     Grid.Column="1"
                                     Margin="10,0"
                                     HorizontalAlignment="Left"
@@ -528,29 +529,29 @@
                                          Foreground="Gray"
                                          
                                          />
-                            </TextBlock>
+                                </TextBlock>
 
-                        </Grid>
-                        
+                            </Grid>
+
                             <Grid  Grid.Column="3">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
 
-                            </Grid.ColumnDefinitions>
-                            <Rectangle
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
                                 HorizontalAlignment="Left"
                                 Height="50"
                                 Width="50"
                                 RadiusX="5"
                                 RadiusY="5">
-                                <Rectangle.Fill>
-                                    <ImageBrush                                    
+                                    <Rectangle.Fill>
+                                        <ImageBrush                                    
                                     ImageSource="/assets/1.png"
                                     Stretch="UniformToFill"/>
-                                </Rectangle.Fill>
-                            </Rectangle>
-                            <TextBlock
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <TextBlock
                                     Grid.Column="1"
                                     Margin="10,0"
                                     HorizontalAlignment="Left"
@@ -563,45 +564,45 @@
                                          Foreground="Gray"
                                          
                                          />
-                            </TextBlock>
+                                </TextBlock>
+
+                            </Grid>
 
                         </Grid>
-
-                    </Grid>
-                    <Grid 
+                        <Grid 
                         Margin="0,20">
-                        <TextBlock Text="Katalogi"
+                            <TextBlock Text="Katalogi"
                                    Foreground="Gray"/>
-                        <Button
+                            <Button
                              Width="30"
                              Background="Transparent"
                              BorderBrush="Silver"
                              Foreground="silver"
                              HorizontalAlignment="Right">
-                            <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
-                            <Button.Content>
-                                <Path
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Content>
+                                    <Path
                                     Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button }}"
                                     Style="{StaticResource {x:Type Path}}"
                                     Data="{StaticResource more}"/>
-                            </Button.Content>
-                        </Button>
-                    </Grid>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
 
 
-                    <WrapPanel>
-                        <ccontrol:FoldersControl
+                        <WrapPanel>
+                            <ccontrol:FoldersControl
                             FolderName="Dokumenty"
                             LastChange="Ostatnia zmiana 12.10.2020"
                             ImageSource1="/assets/1.png"
                             ImageSource2="/assets/2.png"
                             ImageSource3="/assets/1.png"/>
 
-                        <ccontrol:FoldersControl
+                            <ccontrol:FoldersControl
                             Margin="20,0"
                             FolderName="Zdjęcia"
                             LastChange="Ostatnia zmiana 14.10.2020"
@@ -610,107 +611,107 @@
                             ImageSource3="/assets/1.png"/>
 
 
-                        <ccontrol:FoldersControl
+                            <ccontrol:FoldersControl
                             FolderName="Muzyka"
                             LastChange="Ostatnia zmiana 06.10.2020"
                             ImageSource1="/assets/1.png"
                             ImageSource2="/assets/2.png"
                             ImageSource3="/assets/1.png"/>
 
-                    </WrapPanel>
+                        </WrapPanel>
 
-                    <Grid 
+                        <Grid 
                         Margin="0,20">
-                        <TextBlock Text="Niedawno używane pliki"
+                            <TextBlock Text="Niedawno używane pliki"
                                    Foreground="Gray"/>
-                    </Grid>
+                        </Grid>
 
-                    <Grid Height="50">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                        <Grid Height="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
-                        <CheckBox 
+                            <CheckBox 
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                            <CheckBox.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </CheckBox.Resources>
-                        </CheckBox>
+                                <CheckBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </CheckBox.Resources>
+                            </CheckBox>
 
-                        <StackPanel
+                            <StackPanel
                             Grid.Column="1"
                             Orientation="Horizontal">
-                            <TextBlock 
+                                <TextBlock 
                                 VerticalAlignment="Center"
                                 Text="Typ"/>
-                            <Path
+                                <Path
                                 Margin="10,0"
                                 Width="10"
                                 Data="{StaticResource sortdown}"/>
-                        </StackPanel>
+                            </StackPanel>
 
-                        <StackPanel
+                            <StackPanel
                             Grid.Column="2"
                             Orientation="Horizontal">
-                            <TextBlock 
+                                <TextBlock 
                                 VerticalAlignment="Center"
                                 Text="Nazwa Dokumentu"/>
-                            <Path
+                                <Path
                                 Margin="10,0"
                                 Width="10"
                                 Data="{StaticResource sortdown}"/>
-                        </StackPanel>
+                            </StackPanel>
 
 
-                        <StackPanel
+                            <StackPanel
                             Grid.Column="3"
                             Orientation="Horizontal">
-                            <TextBlock 
+                                <TextBlock 
                                 VerticalAlignment="Center"
                                 Text="Rozmiar"/>
-                            <Path
+                                <Path
                                 Margin="10,0"
                                 Width="10"
                                 Data="{StaticResource sortdown}"/>
-                        </StackPanel>
+                            </StackPanel>
 
-                        <StackPanel
+                            <StackPanel
                             Grid.Column="4"
                             Orientation="Horizontal">
-                            <TextBlock 
+                                <TextBlock 
                                 VerticalAlignment="Center"
                                 Text="Ostatnia Zmiana"/>
-                            <Path
+                                <Path
                                 Margin="10,0"
                                 Width="10"
                                 Data="{StaticResource sortdown}"/>
-                        </StackPanel>
+                            </StackPanel>
 
 
-                        <StackPanel
+                            <StackPanel
                             Grid.Column="5"
                             Orientation="Horizontal">
-                            <TextBlock 
+                                <TextBlock 
                                 VerticalAlignment="Center"
                                 Text="Współdzielony z"/>
-                            <Path
+                                <Path
                                 Margin="10,0"
                                 Width="10"
                                 Data="{StaticResource sortdown}"/>
-                        </StackPanel>
-                       
-                    </Grid>
-                    
+                            </StackPanel>
+
+                        </Grid>
+
                         <StackPanel>
-                    <ccontrol:CRow
+                            <ccontrol:CRow
                         Icon="{StaticResource docfile}"
                         DocName="Faktura.pdf"
                         FileSize="0.24 MB"
@@ -720,8 +721,8 @@
                         ImageSource2="/assets/2.png"
                         ImageSource3="/assets/1.png"
                         />
-                    
-                    <ccontrol:CRow
+
+                            <ccontrol:CRow
                         Margin="0,10"
                         Icon="{StaticResource jpgfile}"
                         DocName="Zdjęcie.jpg"
@@ -732,7 +733,7 @@
                         ImageSource2="/assets/2.png"
                         ImageSource3="/assets/1.png"
                         />
-                        <ccontrol:CRow
+                            <ccontrol:CRow
                          
                         Icon="{StaticResource exefile}"
                         DocName="Install.exe"
@@ -744,69 +745,87 @@
                         ImageSource3="/assets/1.png"
                         />
                         </StackPanel>
-                    
 
-                </StackPanel>
 
-            </Grid>
+                    </StackPanel>
+
+                </Grid>
             </ScrollViewer>
-            
+
             <!--Right Panel-->
+            <Button Grid.Column="2"  
+                    Width="24"
+                    Height="24"
+                    Content="X" 
+                    Background="#FFFF4646" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="215,10,9,0" Click="Button_Click" BorderBrush="#FFFF4646" Foreground="#FF272727"
+                >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="12"/>
+                        <Setter Property="BorderThickness" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
             <Grid Grid.Column="2"
                   Margin="20">
-                <StackPanel>
-                <Grid VerticalAlignment="Top">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="60"/>
-                        <ColumnDefinition />
 
-                    </Grid.ColumnDefinitions>
-                    <Ellipse
+                <StackPanel>
+                    <Grid VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition />
+
+                        </Grid.ColumnDefinitions>
+                        <Ellipse
                                             x:Name="logo"
                                             Height="50"
                                             Width="50"
                                             Fill="White">
-                        <Ellipse.Effect>
-                            <DropShadowEffect
+                            <Ellipse.Effect>
+                                <DropShadowEffect
                                                     Direction="320"
                                                     ShadowDepth="1"
                                                     Color="Silver"
                                                     BlurRadius="20"/>
-                        </Ellipse.Effect>
-                    </Ellipse>
-                    <Ellipse 
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <Ellipse 
                                             Height="30"
                                             Width="30">
-                        <Ellipse.Fill>
-                            <ImageBrush 
+                            <Ellipse.Fill>
+                                <ImageBrush 
                                 ImageSource="/assets/googledrive.png"
                                 Stretch="Uniform"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
+                            </Ellipse.Fill>
+                        </Ellipse>
 
-                    <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
-                    <!--<Path Data="{TemplateBinding Tag }"
+                        <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                        <!--<Path Data="{TemplateBinding Tag }"
                                           Fill="{TemplateBinding Foreground}"
                                           Style="{StaticResource {x:Type Path}}"/>-->
-                    <TextBlock
+                        <TextBlock
                                             Margin="15,0"
                                             Grid.Column="1"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Center"
                                             Text="Google Drive"/>
 
-                </Grid>
-                    
-                <Grid
+                    </Grid>
+
+                    <Grid
                     Margin="0,30,0,0">
-                 
-                    <TextBlock
+
+                        <TextBlock
                         Text="56 Gb"/>
-                    <TextBlock
+                        <TextBlock
                         Text="100 Gb"
                         HorizontalAlignment="Right"/>
-                    </Grid>     
-                    
+                    </Grid>
+
                     <ProgressBar
                         Margin="0,5"
                         x:Name="progress"
@@ -823,8 +842,8 @@
                     <Separator 
                         Margin="0,20"
                         Background="LightGray"/>
-                    
-                        <Grid Height="35"
+
+                    <Grid Height="35"
                               >
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -836,9 +855,9 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                       
-                            
-                       
+
+
+
                             <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
                             <Path Data="{StaticResource audiofile }"
                                    
@@ -846,6 +865,7 @@
                                   Style="{StaticResource {x:Type Path}}"/>
                             <TextBlock
                                 Grid.Column="1"
+                                Margin="5,0,0,0"
                                 Text="Muzyka"
                                 VerticalAlignment="Center"/>
                             <TextBlock
@@ -864,45 +884,46 @@
                         </ProgressBar>
                     </Grid>
 
-                        <Grid Height="35"
+                    <Grid Height="35"
                               Margin="0,20,0,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid  >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
 
 
-                                <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
-                                <Path Data="{StaticResource imagefile }"
+                            <!--Ustawienia odnośnie ikonek [ nazwa, tlo, styl ]-->
+                            <Path Data="{StaticResource imagefile }"
                                    
                                       Fill="#FF60AC14"
                                       Style="{StaticResource {x:Type Path}}"/>
-                                <TextBlock
+                            <TextBlock
                                     Grid.Column="1"
+                                    Margin="5,0,0,0"
                                     Text="Zdjęcia"
                                     VerticalAlignment="Center"/>
-                                <TextBlock
+                            <TextBlock
                                     Grid.Column="2"
                                     Text="15 GB"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center"/>
-                            </Grid>
-                            <ProgressBar
+                        </Grid>
+                        <ProgressBar
                                     Margin="0,5"
                                     Grid.Row="1" 
                                     Height="5"
                                     BorderBrush="White"
                                     Foreground="#FF60AC14"
                                     Value="80" Style="{DynamicResource ProgressBarStyle1}">
-                            </ProgressBar>
-                        </Grid>
+                        </ProgressBar>
+                    </Grid>
                     <Grid Height="35"
                               Margin="0,20,0,0">
                         <Grid.RowDefinitions>
@@ -925,6 +946,7 @@
                                       Style="{StaticResource {x:Type Path}}"/>
                             <TextBlock
                                     Grid.Column="1"
+                                    Margin="5,0,0,0"
                                     Text="Dokumenty"
                                     VerticalAlignment="Center"/>
                             <TextBlock
@@ -964,6 +986,7 @@
                                       Style="{StaticResource {x:Type Path}}"/>
                             <TextBlock
                                     Grid.Column="1"
+                                    Margin="5,0,0,0"
                                     Text="Inne pliki"
                                     VerticalAlignment="Center"/>
                             <TextBlock
@@ -1003,6 +1026,7 @@
                                       Style="{StaticResource {x:Type Path}}"/>
                             <TextBlock
                                     Grid.Column="1"
+                                    Margin="5,0,0,0"
                                     Text="Nieropoznane pliki"
                                     VerticalAlignment="Center"/>
                             <TextBlock
@@ -1020,10 +1044,60 @@
                                     Value="70" Style="{DynamicResource ProgressBarStyle1}">
                         </ProgressBar>
                     </Grid>
+
                 </StackPanel>
+                <Grid VerticalAlignment="Bottom"
+                      Height="150"
+                      Width="200">
+
+                    <Rectangle 
+                        RadiusX="10"
+                        RadiusY="10"
+                     
+                        StrokeThickness="1"
+                        Stroke="Silver"
+                        />
+                    <Border VerticalAlignment="Top"
+                            Margin="0, -10"
+                            Height="30"
+                            Width="30"
+                            Background="WhiteSmoke">
+                        <Path 
+                         
+                        Height="20"
+                        Width="20"
+                        Data="{StaticResource clearmemory}"
+                        Style="{StaticResource {x:Type Path}}"/>
+
+                    </Border>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock
+                            Margin="0,5"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap"
+                            Text="Usuń 323 MB plików tymczasowych"
+                            Foreground="Gray" VerticalAlignment="Bottom"/>
+                        <Button 
+                             Margin="0,10,-10,0"
+                             Width="160"
+                             Background="Orange"
+                             BorderThickness="0"
+                             Content="Usuń pliki"
+                             Foreground="WhiteSmoke"
+                             Height="50"
+                             FontWeight="SemiBold"
+                            >
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </Grid>
             </Grid>
         </Grid>
-                
+
     </Border>
 
 </Window>
